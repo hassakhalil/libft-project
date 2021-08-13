@@ -19,8 +19,10 @@ int	number_of_string(char const *s, char c)
 		}
 		if (j == 1)
 			n++;
-		i++;
+		if (s[i] != '\0')
+			i++;
 	}
+	printf("[[%d]]\n", n);
 	return (n);
 }
 
@@ -47,12 +49,13 @@ int	*string_size_table(int number_of_string, char const *s, char c)
 		if (j != 0)
 		{
 			n[k] = j + 1;
+			printf("[[%d]]\n", n[k]);
 			k++;
 		}
-		i++;
+		if (s[i] != '\0')
+			i++;
 	}
-	if (j != 0)
-		n[k] = 0;
+	n[k] = 0;
 	return (n);
 }
 
@@ -64,17 +67,16 @@ char	**ft_split(char const *s, char c)
 	int	j;
 	int	k;
 
+	if (s == 0 || c == 0)
+		return (0);
 	n = string_size_table(number_of_string(s, c), s, c);
 	if (n == 0)
 		return (0);
-	i = 0;
+	i = 1;
 	j = 0;
 	while (n[i] != 0)
-	{
-		j = n[i] + j;
 		i++;
-	}
-	x = malloc(j + sizeof(NULL));
+	x = malloc(i* sizeof(char *));
 	if (x == 0)
 		return (0);
 	i = 0;
@@ -101,7 +103,8 @@ char	**ft_split(char const *s, char c)
 			x[k][j] = '\0';
 			k++;
 		}
-		i++;
+		if (s[i] != '\0')
+			i++;
 	}
 	x[k] = NULL;
 	free (n);
@@ -113,10 +116,12 @@ int main ()
 {
 	char	**x;
 	int	i = 0;
-	x = ft_split("wetrtwerweroooooooootwtwerotweter", '\0');
+	x = ft_split("hdhdhhdhdxjsjsjjxklslxs12345", 'x');
+	if (x == 0)
+		return (0);
 	while (x[i] != NULL)
 	{
-		printf("[%s]\n", x[i]);
+		printf("%s\n", x[i]);
 		i++;
 	}
 	i = 0;
