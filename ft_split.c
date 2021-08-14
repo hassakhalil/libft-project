@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	number_of_string(char const *s, char c)
+int	number_of_strings(char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -9,105 +9,68 @@ int	number_of_string(char const *s, char c)
 
 	i = 0;
 	n = 0;
-	while (s[i] != '\0')
+	if (!s || !c)
+		return (0);
+	while (s[i] != 0)
 	{
 		j = 0;
-		while (s[i] != c && s[i] != '\0')
+		while (s[i] != c && s[i] != 0)
 		{
 			j = 1;
 			i++;
 		}
 		if (j == 1)
 			n++;
-		if (s[i] != '\0')
+		if (s[i] != 0)
 			i++;
 	}
-	printf("[[%d]]\n", n);
 	return (n);
 }
-
-int	*string_size_table(int number_of_string, char const *s, char c)
-{
-	int	i;
-	int	j;
-	int	k;
-	int	*n;
-
-	n = malloc((number_of_string + 1) * 4);
-	if (n == 0)
-		return (0);
-	i = 0;
-	k = 0;
-	while (s[i] != '\0')
-	{
-		j = 0;
-		while (s[i] != c && s[i] != '\0')
-		{
-			j++;
-			i++;
-		}
-		if (j != 0)
-		{
-			n[k] = j + 1;
-			printf("[[%d]]\n", n[k]);
-			k++;
-		}
-		if (s[i] != '\0')
-			i++;
-	}
-	n[k] = 0;
-	return (n);
-}
-
+	
 char	**ft_split(char const *s, char c)
 {
 	char	**x;
-	int	*n;
-	int	i;
-	int	j;
-	int	k;
+	 int	i;
+	 int	j;
+	 int	k;
+	 int	l;
+	 int	n;
 
-	if (s == 0 || c == 0)
-		return (0);
-	n = string_size_table(number_of_string(s, c), s, c);
+	n = number_of_strings(s, c);
 	if (n == 0)
 		return (0);
-	i = 1;
-	j = 0;
-	while (n[i] != 0)
-		i++;
-	x = malloc(i* sizeof(char *));
-	if (x == 0)
+	x = malloc((n + 1) * sizeof(char *));
+	if (!s || !c ||!x)
 		return (0);
 	i = 0;
-	while (n[i] != 0)
-	{
-		x[i] = malloc(n[i]);
-		if (x[i] == 0)
-			return (0);
-		i++;
-	}
-	i = 0;
+	j = 0;
 	k = 0;
-	while (s[i] != '\0')
+	while (n > 0)
 	{
 		j = 0;
-		while (s[i] != c && s[i] != '\0')
-		{
-			x[k][j] = s[i];
+		while (s[i] == c)
+			i++;
+		while (s[i + j] != c && s[i + j] != 0)
 			j++;
-			i++;
-		}
-		if (j != 0)
+		x[k] = malloc(j + 1);
+		if (x[k] == 0)
+			return (0);
+		l = 0;
+		while (i < i + j)
 		{
-			x[k][j] = '\0';
-			k++;
-		}
-		if (s[i] != '\0')
+			x[k][l] = s[i];
 			i++;
+			l++;
+			j--;
+		}
+		if (l != 0)
+		{
+			x[k][l] = 0;
+			k++;
+			n--;
+		}
 	}
 	x[k] = NULL;
-	free (n);
 	return (x);
 }
 
@@ -116,18 +79,13 @@ int main ()
 {
 	char	**x;
 	int	i = 0;
-	x = ft_split("hdhdhhdhdxjsjsjjxklslxs12345", 'x');
+	x = ft_split(NULL, '=');
 	if (x == 0)
 		return (0);
 	while (x[i] != NULL)
 	{
-		printf("%s\n", x[i]);
-		i++;
-	}
-	i = 0;
-	while (x[i] != NULL)
-	{
-		free (x[i]);
+		printf("[%s]\n", x[i]);
+		free(x[i]);
 		i++;
 	}
 	free (x[i]);
