@@ -1,14 +1,4 @@
-#include <string.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -23,6 +13,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
+
 #include <stdio.h>
 int main()
 {

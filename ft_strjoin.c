@@ -1,15 +1,4 @@
-#include <string.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,21 +7,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*s;
 
 	s = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (s == 0)
+	if (!s1 || !s2 || !s)
 		return (0);
 	i = 0;
-	while (s1[i] != '\0')
+	while (s1[i])
 	{
 		s[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (s2[j] != '\0')
+	while (s2[j])
 	{
 		s[i + j] = s2[j];
 		j++;
 	}
-	s[i + j] = '\0';
+	s[i + j] = 0;
 	return (s);
 }
 

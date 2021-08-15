@@ -1,9 +1,4 @@
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+#include "libft.h"
 
 int	ft_isspace(int c)
 {
@@ -41,6 +36,6 @@ int	ft_atoi(const char *nptr)
 #include <stdlib.h>
 int main ()
 {
-	printf("%d\n", ft_atoi("-2147483648"));
-	printf("%d\n", atoi("-2147483648"));
+	printf("%d\n", ft_atoi("-1234568"));
+//	printf("%d\n", atoi(NULL));
 }
