@@ -69,5 +69,5 @@ int main ()
 	char	(*ptr)(unsigned int, char);
 
 	ptr = &f;
-	printf("%s\n", ft_strmapi(NULL, f));
+	printf("%s\n", ft_strmapi(NULL, ptr));
 }
