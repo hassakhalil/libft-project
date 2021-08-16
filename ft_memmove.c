@@ -19,8 +19,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return ((void *)dest);
 }
-#include <stdio.h>
-int main ()
-{
-	printf("%s", (char *)ft_memmove("hello", "world", 5));
-}

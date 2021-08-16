@@ -7,8 +7,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (!big || !little)
 		return (0);
-	if (little[0])
-		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len)
 	{
@@ -19,10 +17,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			return (&((char *)big)[i]);
 		i++;
 	}
-	return (0);
-}
-#include <stdio.h>
-int main ()
-{
-	printf("%s\n", ft_strnstr("hello hello how are you world", "how", 0 ));
+	return ((char *)big);
 }

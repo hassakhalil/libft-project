@@ -69,22 +69,3 @@ char	**ft_split(char const *s, char c)
 	ft_split_1(s, c, x, n);
 	return (x);
 }
-
-#include <stdio.h>
-int main ()
-{
-	char	**x;
-	int	i = 0;
-	x = ft_split("1222==hello==there====how=are=youuuu=16", '=');
-	//x = ft_split(NULL, 'a');
-	if (x == 0)
-		return (0);
-	while (x[i] != NULL)
-	{
-		printf("[%s]\n", x[i]);
-		free(x[i]);
-		i++;
-	}
-	free (x[i]);
-	free (x);
-}

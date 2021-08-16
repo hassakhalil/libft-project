@@ -32,10 +32,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (n * sign);
 }
-#include <stdio.h>
-#include <stdlib.h>
-int main ()
-{
-	printf("%d\n", ft_atoi("-1234568"));
-//	printf("%d\n", atoi(NULL));
-}

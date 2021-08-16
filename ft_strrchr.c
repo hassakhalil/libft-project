@@ -2,8 +2,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	n;
+	int		n;
 
+	if (c < -128 || c > 127)
+		return ((char *)s);
 	n = ft_strlen(s);
 	while (0 <= n)
 	{
@@ -12,10 +14,4 @@ char	*ft_strrchr(const char *s, int c)
 		n--;
 	}
 	return (0);
-}
-
-#include <stdio.h>
-int main()
-{
-	printf("%s\n", ft_strrchr("cccccc00", '\0'));
 }

@@ -13,11 +13,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%p\n", ft_memchr("helaa", 'o', 5));
-	//printf("%s\n", (char *)memchr(NULL, 'm', 5));
-}

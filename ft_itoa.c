@@ -30,7 +30,6 @@ char	*ft_itoa(int n)
 	if (!s)
 		return (0);
 	s[i - 1] = '\0';
-	k = (long)n * sign;
 	while (k > 9)
 	{
 		s[i - 2] = (k % 10) + '0';
@@ -41,11 +40,4 @@ char	*ft_itoa(int n)
 	if (!(i - 3))
 		s[i - 3] = '-';
 	return (s);
-}
-#include <stdio.h>
-int main ()
-{
-	char *s;
-	printf("%s\n", s = ft_itoa(2147483647));
-	free(s);
 }

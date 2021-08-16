@@ -18,11 +18,3 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
-#include <stdio.h>
-int main ()
-{
-	char src[] = "NULL";
-	char dest[] = "1337";
-	printf("%ld\n", ft_strlcpy(dest, src, 4));
-	printf("%s\n", dest);
-}

@@ -12,13 +12,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-#include <stdio.h>
-int main ()
-{
-	char	dest = "hello world";
-	void	(*f_ptr)(unsigned int, char*);
-	f_ptr = &f;
-	ft_striteri(dest , f_ptr);
-	printf("%s\n", dest);
-}

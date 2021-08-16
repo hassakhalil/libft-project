@@ -24,12 +24,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s[i + j] = 0;
 	return (s);
 }
-
-#include <stdio.h>
-
-int main ()
-{
-	char s1[] = "hello";
-	char s2[] = "how are you today";
-	printf("%s\n", ft_strjoin(s1, s2));
-}

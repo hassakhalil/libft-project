@@ -19,10 +19,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-#include <stdio.h>
-
-int main()
-{
-	char	s[] = "hello there how are you today";
-	printf("%s\n", ft_substr(s, 50, 4));
-}

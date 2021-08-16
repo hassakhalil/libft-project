@@ -22,10 +22,3 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, &c, 1);
 	}
 }
-
-
-
-int main()
-{
-	ft_putnbr_fd(9, 1);
-}

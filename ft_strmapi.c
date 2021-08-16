@@ -16,12 +16,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (new_s);
 }
-
-#include <stdio.h>
-int main ()
-{
-	char	(*ptr)(unsigned int, char);
-
-	ptr = &f;
-	printf("%s\n", ft_strmapi(NULL, ptr));
-}

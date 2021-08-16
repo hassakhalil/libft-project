@@ -10,9 +10,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(x, nmemb * size);
 	return (x);
 }
-#include <stdio.h>
-int main ()
-{
-	printf("%p\n", ft_calloc(0, 4));
-	printf("%p\n", malloc(0));
-}

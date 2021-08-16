@@ -21,12 +21,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[x + i] = 0;
 	return (x + y);
 }
-#include <string.h>
-#include <stdio.h>
-int main ()
-{
-	char dest[] = "hehehe";
-	char src[] = "hhhhh";
-	printf("%ld\n", ft_strlcat(dest, src, 5));
-	//printf("%s", strncat(dest, src, 10));
-}
