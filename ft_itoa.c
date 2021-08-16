@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 int	string_size(long k, int sign)
 {
 	int	i;
@@ -9,10 +9,9 @@ int	string_size(long k, int sign)
 		k = k / 10;
 		i++;
 	}
-	i++;
 	if (sign == -1)
 		i++;
-	return (i);
+	return (i + 1);
 }
 
 char	*ft_itoa(int n)
@@ -29,7 +28,7 @@ char	*ft_itoa(int n)
 	s = malloc((i = string_size(k, sign)) + 1);
 	if (!s)
 		return (0);
-	s[i - 1] = '\0';
+	s[i - 1] = 0;
 	while (k > 9)
 	{
 		s[i - 2] = (k % 10) + '0';
@@ -37,7 +36,7 @@ char	*ft_itoa(int n)
 		i--;
 	}
 	s[i - 2] = k + '0';
-	if (!(i - 3))
+	if (n < 0)
 		s[i - 3] = '-';
 	return (s);
 }
