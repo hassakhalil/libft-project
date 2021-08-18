@@ -1,6 +1,4 @@
 #include "libft.h"
-//#include <string.h>
-//#include <stdio.h>
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	   int		i;
@@ -28,10 +26,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = 0;
 	return ((char *)sub);
 }
-/*int main ()
-{
-	char *str = strdup("0123456789");
-	char *s = ft_substr("tripouille", 1, 1);
-	printf("%s\n", s);
-	free (s);
-}*/
