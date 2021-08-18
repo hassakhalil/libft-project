@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 	sign = 1;
 	if (k < 0)
 		k = k * (sign = -1);
-	s = malloc((i = string_size(k, sign)) + 1);
+	s = malloc((i = string_size(k, sign)));
 	if (!s)
 		return (0);
 	s[i - 1] = 0;

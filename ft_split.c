@@ -8,8 +8,6 @@ int	number_of_strings(char const *s, char c)
 
 	i = 0;
 	n = 0;
-	if (!s || !c)
-		return (0);
 	while (s[i])
 	{
 		j = 0;
@@ -60,11 +58,11 @@ char	**ft_split(char const *s, char c)
 	char	**x;
 	 int	n;
 
-	n = number_of_strings(s, c);
-	if (n == 0)
+	if (!s)
 		return (0);
+	n = number_of_strings(s, c);
 	x = malloc((n + 1) * sizeof(char *));
-	if (!s || !c || !x)
+	if (!x)
 		return (0);
 	ft_split_1(s, c, x, n);
 	return (x);
