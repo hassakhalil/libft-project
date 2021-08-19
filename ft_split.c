@@ -1,5 +1,4 @@
 #include "libft.h"
-
 int	number_of_strings(char const *s, char c)
 {
 	int	i;
