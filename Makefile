@@ -9,7 +9,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME):
 	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar rc libft.a $(OBJ)
 	ranlib libft.a
@@ -19,6 +19,5 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-	rm -rf libft.a
 
 re: fclean all
