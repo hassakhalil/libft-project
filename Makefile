@@ -5,17 +5,27 @@ ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_
 ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 ft_putnbr_fd.c
 
+BSRC = $(SRC)\
+ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 OBJ = $(SRC:.c=.o)
+
+BOBJ = $(BSRC:.c=.o)
 
 $(NAME): $(OBJ)
 	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+make bonus: $(BSRC)
+	gcc -Wall -Wextra -Werror -c $(BSRC)
+	ar rc $(NAME) $(BOBJ)
+	ranlib $(NAME)
+
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(BOBJ)
 
 fclean: clean
 	rm -rf $(NAME)
