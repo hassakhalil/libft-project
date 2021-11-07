@@ -17,12 +17,12 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+ALL: $(NAME)
+
 make bonus: $(BSRC)
 	gcc -Wall -Wextra -Werror -c $(BSRC)
 	ar rc $(NAME) $(BOBJ)
 	ranlib $(NAME)
-
-all: $(NAME)
 
 clean:
 	rm -rf $(BOBJ)
