@@ -4,8 +4,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	int	i;
 
-	if (!dest || !src)
-		return (0);
 	if (src < dest)
 	{
 		i = n - 1;

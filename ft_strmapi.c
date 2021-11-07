@@ -5,9 +5,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	        char	*new_s;
 	unsigned int	i;
 
-	new_s = ft_strdup(s);
-	if (!s || !f || !new_s)
+	if (!s || !f)
 		return (0);
+  new_s = ft_strdup(s);
+  if (!new_s)
+    return (0);
 	i = 0;
 	while (new_s[i])
 	{

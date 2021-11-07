@@ -4,12 +4,10 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		n;
 
-	if (c < -128 || c > 127)
-		return ((char *)s);
 	n = ft_strlen(s);
 	while (0 <= n)
 	{
-		if (s[n] == c)
+		if (s[n] == (char)c)
 			return (&((char *)s)[n]);
 		n--;
 	}
