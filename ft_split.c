@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 16:55:43 by hkhalil           #+#    #+#             */
+/*   Updated: 2021/11/08 17:43:35 by hkhalil          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
 int	number_of_strings(char const *s, char c)
 {
 	int	i;
@@ -23,6 +36,17 @@ int	number_of_strings(char const *s, char c)
 	return (n);
 }
 
+void	ft_free(char **x, int k)
+{
+	while (k > 0)
+	{
+		free(x[k - 1]);
+		k--;
+	}
+	free(x);
+	x = NULL;
+}
+
 void	ft_split_1(char const *s, char c, char **x, int n)
 {
 	int	i;
@@ -40,7 +64,10 @@ void	ft_split_1(char const *s, char c, char **x, int n)
 			j++;
 		x[k] = malloc(j + 1);
 		if (!x)
+		{
+			ft_free(x, k);
 			return ;
+		}
 		if (ft_memmove(x[k], &s[i], j))
 		{
 			x[k][j] = 0;

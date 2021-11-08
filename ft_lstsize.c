@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 16:29:08 by hkhalil           #+#    #+#             */
+/*   Updated: 2021/11/08 16:29:11 by hkhalil          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_lstsize(t_list *lst)
@@ -12,25 +24,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
-/*#include <stdio.h>
-
-int main()
-{
-	t_list	*head;
-	t_list	*second;
-	t_list	*third;
-	char	s[] = "hello world!";
-
-	head = malloc(sizeof(t_list	*));
-	second = malloc(sizeof(t_list *));
-	third = malloc(sizeof(t_list *));
-	head->content = s;
-	head->next = second;
-	second->content = s;
-	second->next = third;
-	third->content = s;
-	third->next = NULL;
-	printf("%d\n", ft_lstsize(head));
-	return (0);
-}*/

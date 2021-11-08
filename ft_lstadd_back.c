@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 16:08:08 by hkhalil           #+#    #+#             */
+/*   Updated: 2021/11/08 16:15:28 by hkhalil          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
 
 	if (!lst)
 		return ;
@@ -10,26 +23,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		(*lst) = new;
 		return ;
 	}
-	//ft_lstlast(*lst)->next = new;
-	t_list *tmp = ft_lstlast(*lst);
+	tmp = ft_lstlast(*lst);
 	tmp->next = new;
 }
-/*#include <stdio.h>
-int main()
-{
-	t_list	*head;
-	t_list	*second;L
-	t_list	*new;
-
-	head = malloc(sizeof(t_list *));
-	second = malloc(sizeof(t_list *));
-	new = malloc(sizeof(t_list *));
-	head->content = "hello world 1";
-	head->next = second;
-	second->content = "hello world 2";
-	second->next = NULL;
-	new->content  = "surprise bitch";
-	new->next = NULL;
-	ft_lstadd_back(&head, new);
-	printf("%s\n", ft_lstlast(head)->content);
-}*/

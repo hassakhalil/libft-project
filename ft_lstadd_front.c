@@ -1,28 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 16:12:02 by hkhalil           #+#    #+#             */
+/*   Updated: 2021/11/08 16:15:50 by hkhalil          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = *lst;
 	new->next = tmp;
 	*lst = new;
 }
-/*#include <stdio.h>
-int main()
-{
-	t_list	**lst;
-	t_list	*list;
-	t_list	*new = NULL;
-
-	list = malloc(sizeof(t_list));
-	new = malloc(sizeof(t_list));
-	lst = malloc(sizeof(t_list *));
-	lst = &list;
-	list->content = "fisrt content";
-	list->next = NULL;
-	new->content = "last content";
-	new->next = NULL;
-	ft_lstadd_front(lst, new);
-	printf("%s\n", list->content);
-}*/
