@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:05:34 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/08 16:06:03 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/10 23:14:13 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,23 @@ int	string_size(long k, int sign)
 	return (i + 1);
 }
 
+int	ft_sign(int n)
+{
+	if (n < 0)
+		return (-1);
+	return (1);
+}
+
 char	*ft_itoa(int n)
 {
-	 int	i;
-	 int	sign;
+	int		i;
 	long	k;
 	char	*s;
 
 	k = n;
-	sign = 1;
-	if (k < 0)
-		k = k * (sign = -1);
-	s = malloc((i = string_size(k, sign)));
+	k = k * ft_sign(n);
+	i = string_size(k, ft_sign(n));
+	s = malloc(i);
 	if (!s)
 		return (0);
 	s[i - 1] = 0;

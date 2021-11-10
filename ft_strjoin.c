@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:59:03 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/08 17:01:54 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/10 23:10:18 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	 int	i;
-	 int	j;
+	int		i;
+	int		j;
 	char	*s;
 
 	if (!s1 || !s2)

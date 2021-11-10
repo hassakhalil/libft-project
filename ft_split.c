@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:55:43 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/08 17:43:35 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/10 19:29:30 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,21 @@ int	number_of_strings(char const *s, char c)
 	return (n);
 }
 
-void	ft_free(char **x, int k)
+char	*malloc_free(char **x, int k, int j)
 {
-	while (k > 0)
+	x[k] = malloc(j + 1);
+	if (!x[k])
 	{
-		free(x[k - 1]);
-		k--;
+		while (k > 0)
+		{
+			free(x[k - 1]);
+			k--;
+		}
+		free(x);
+		x = NULL;
+		return (0);
 	}
-	free(x);
-	x = NULL;
+	return (x[k]);
 }
 
 void	ft_split_1(char const *s, char c, char **x, int n)
@@ -62,12 +68,8 @@ void	ft_split_1(char const *s, char c, char **x, int n)
 			i++;
 		while (s[i + j] != c && s[i + j])
 			j++;
-		x[k] = malloc(j + 1);
-		if (!x)
-		{
-			ft_free(x, k);
+		if (!malloc_free(x, k, j))
 			return ;
-		}
 		if (ft_memmove(x[k], &s[i], j))
 		{
 			x[k][j] = 0;
@@ -82,7 +84,7 @@ void	ft_split_1(char const *s, char c, char **x, int n)
 char	**ft_split(char const *s, char c)
 {
 	char	**x;
-	 int	n;
+	int		n;
 
 	if (!s)
 		return (0);
