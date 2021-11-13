@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:58:37 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/08 16:58:40 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/13 19:00:58 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+//lakjdlsa
+//asdanksldnkalsmdnwl
+//;akqmndwlkqw
+//qwdqwdd
