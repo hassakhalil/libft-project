@@ -4,7 +4,6 @@
 
 int main()
 {
-	printf("mine : %lu\n", ft_strlcat("hello", "hello", 0));
-	printf("system : %lu\n", strlcat("hello", "hello", 0));
-	
+	//printf("%zu\n", ft_strlcat(NULL, NULL, 15));
+	printf("%zu\n",     strlcat(NULL,NULL, 15));
 }

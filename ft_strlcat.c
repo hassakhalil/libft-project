@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:57:59 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/14 05:38:36 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/14 21:59:17 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	x;
 
 	if (!dest && !size)
-		return (0);
+		return (ft_strlen(src));
 	x = ft_strlen(dest);
 	if (size <= x)
 		return (size + ft_strlen(src));
