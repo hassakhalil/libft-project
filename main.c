@@ -4,6 +4,6 @@
 
 int main()
 {
-	//printf("%zu\n", ft_strlcat(NULL, NULL, 15));
-	printf("%zu\n",     strlcat(NULL,NULL, 15));
+	printf("%d\n", ft_atoi("-922"));
+	printf("%d\n",    atoi("-922"));
 }

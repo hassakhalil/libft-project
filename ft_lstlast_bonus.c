@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:19:23 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/08 16:19:42 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/14 22:46:28 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (lst);
-	while (lst->next != NULL)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }

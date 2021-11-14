@@ -6,7 +6,7 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:16:30 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/08 16:16:42 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/14 22:57:10 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (!lst || !(*lst))
+	if (!lst)
 		return ;
 	while (*lst)
 	{

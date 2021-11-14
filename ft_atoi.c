@@ -6,12 +6,12 @@
 /*   By: hkhalil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:02:17 by hkhalil           #+#    #+#             */
-/*   Updated: 2021/11/14 21:28:01 by hkhalil          ###   ########.fr       */
+/*   Updated: 2021/11/14 22:39:51 by hkhalil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int	ft_isspace(int c)
 {
 	if (c == '\f' || c == '\n' || c == '\r'
@@ -22,12 +22,12 @@ int	ft_isspace(int c)
 
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	i;
+	int					sign;
+	int					i;
 	unsigned long long	n;	
 
 	sign = 1;
-	i = 0;
+	i = -1;
 	n = 0;
 	while (ft_isspace(*nptr))
 		nptr++;
@@ -37,18 +37,14 @@ int	ft_atoi(const char *nptr)
 			sign = -1;
 		nptr++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
+	while (ft_isdigit(nptr[++i]))
 		n = (n * 10) + (nptr[i] - '0');
-		i++;
-	}
 	if (n > 9223372036854775807)
 	{
-		if  (sign == -1)
+		if (sign == -1)
 			return (0);
 		else
 			return (-1);
 	}
 	return (n * sign);
 }
-
