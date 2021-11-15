@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 $(NAME): $(OBJ)
 
-ALL: $(NAME)
+all: $(NAME)
 
 %.o: %.c
 	cc $(CFLAGS) -c $<
@@ -29,4 +29,4 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean ALL
+re: fclean all
